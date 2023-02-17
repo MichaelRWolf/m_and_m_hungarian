@@ -1,15 +1,8 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
+import nltk
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hiya, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-import nltk
 
 
 def wing_it():
@@ -26,7 +19,7 @@ def wing_it():
 # TODO: Research different parsers and dictionaries.
 
 def friends_romans():
-    sentence = "Friends, romans, countrymen, \nlend me your ears.\nI come to bury Caesar, not to praise him.\n"
+    sentence = "Friends, romans, countrymen, \nlend me your ears.\n"
 
     tokens = nltk.word_tokenize(sentence)
     tagged = nltk.pos_tag(tokens)
@@ -40,7 +33,7 @@ def friends_romans():
 
 
 def whole_speech_from_file(filename):
-    with open(filename) as file:
+    with open(filename, encoding="utf-8") as file:
         text = file.read()
 
     print(text)
