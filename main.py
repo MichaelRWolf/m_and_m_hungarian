@@ -9,8 +9,8 @@ def print_hi(name):
     print(f'Hiya, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 
-
 import nltk
+
 
 def wing_it():
     sentence = "This is a sentence."
@@ -19,6 +19,8 @@ def wing_it():
     tagged = nltk.pos_tag(tokens)
 
     print(tagged)
+
+
 # Output: [('This', 'DT'), ('is', 'VBZ'), ('a', 'DT'), ('sentence', 'NN'), ('.', '.')]
 
 # TODO: Research different parsers and dictionaries.
@@ -36,6 +38,7 @@ def friends_romans():
         combined_string = "{}.{} ".format(part_of_speech, word)
         print(combined_string, end='')
 
+
 def whole_speech_from_file(filename):
     with open(filename) as file:
         text = file.read()
@@ -48,15 +51,14 @@ def whole_speech_from_file(filename):
             combined_string = " {}{}".format(part_of_speech.lower(), word.capitalize())
         else:
             combined_string = "{} ".format(word)
-       
+
         print(combined_string, end='')
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # wing_it()
     # friends_romans()
     whole_speech_from_file('speech.txt')
-
-
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
