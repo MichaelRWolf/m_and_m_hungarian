@@ -28,7 +28,7 @@ def friends_romans():
 
     for word, part_of_speech in tagged:
         # print(word, part_of_speech)
-        combined_string = "{}.{} ".format(part_of_speech, word)
+        combined_string = f"{part_of_speech}.{word} "
         print(combined_string, end='')
 
 
@@ -43,9 +43,9 @@ def whole_speech_from_file(filename):
 
     for word, part_of_speech in tagged:
         if part_of_speech[0].isalpha():
-            combined_string = " {}{}".format(part_of_speech.lower(), word.capitalize())
+            combined_string = f" {part_of_speech.lower()}{word.capitalize()}"
         else:
-            combined_string = "{}".format(word)
+            combined_string = word
 
         print(combined_string, end='')
 
