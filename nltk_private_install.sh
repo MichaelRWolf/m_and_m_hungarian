@@ -1,4 +1,4 @@
 #!/bin/sh
 
-pip install nltk
+pipenv install nltk
 python -m nltk.downloader all
