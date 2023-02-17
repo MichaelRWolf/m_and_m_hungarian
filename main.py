@@ -36,10 +36,27 @@ def friends_romans():
         combined_string = "{}.{} ".format(part_of_speech, word)
         print(combined_string, end='')
 
+def whole_speech_from_file(filename):
+    with open(filename) as file:
+        text = file.read()
+
+    tokens = nltk.wordpunct_tokenize(text)
+    tagged = nltk.pos_tag(tokens)
+
+    for word, part_of_speech in tagged:
+        if part_of_speech[0].isalpha():
+            combined_string = " {}{}".format(part_of_speech.lower(), word.capitalize())
+        else:
+            combined_string = "{} ".format(word)
+       
+        print(combined_string, end='')
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    wing_it()
-    friends_romans()
+    # wing_it()
+    # friends_romans()
+    whole_speech_from_file('speech.txt')
+
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
