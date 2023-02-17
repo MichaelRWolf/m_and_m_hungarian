@@ -43,6 +43,8 @@ def whole_speech_from_file(filename):
     with open(filename) as file:
         text = file.read()
 
+    print(text)
+
     tokens = nltk.wordpunct_tokenize(text)
     tagged = nltk.pos_tag(tokens)
 
@@ -50,7 +52,7 @@ def whole_speech_from_file(filename):
         if part_of_speech[0].isalpha():
             combined_string = " {}{}".format(part_of_speech.lower(), word.capitalize())
         else:
-            combined_string = "{} ".format(word)
+            combined_string = "{}".format(word)
 
         print(combined_string, end='')
 
