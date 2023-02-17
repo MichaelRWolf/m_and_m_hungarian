@@ -21,9 +21,25 @@ def wing_it():
     print(tagged)
 # Output: [('This', 'DT'), ('is', 'VBZ'), ('a', 'DT'), ('sentence', 'NN'), ('.', '.')]
 
+# TODO: Research different parsers and dictionaries.
+
+def friends_romans():
+    sentence = "Friends, romans, countrymen, \nlend me your ears.\nI come to bury Caesar, not to praise him.\n"
+
+    tokens = nltk.word_tokenize(sentence)
+    tagged = nltk.pos_tag(tokens)
+
+    print(tagged)
+
+    for word, part_of_speech in tagged:
+        # print(word, part_of_speech)
+        combined_string = "{}.{} ".format(part_of_speech, word)
+        print(combined_string, end='')
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
     wing_it()
+    friends_romans()
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
