@@ -13,7 +13,7 @@ from approvaltests.reporters.generic_diff_reporter_factory \
 from HungarianDecorator \
     import HungarianDecorator
 
-
+# TODO: Store approved files in a separate directory
 class TestHungarianDecorator(unittest.TestCase):
     def setUp(self):
         self.decorator = HungarianDecorator()
