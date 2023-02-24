@@ -3,3 +3,4 @@
 # Created by M&M
 *.received.txt
 .pytest_cache/*
+__pycache__
