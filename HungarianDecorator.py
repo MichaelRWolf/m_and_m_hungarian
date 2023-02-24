@@ -3,6 +3,7 @@ Module for decorating text with Hungarian notation.
 """
 import nltk
 
+
 class HungarianDecorator:
     def decorate_from_file(self, filename):
         pass
@@ -19,12 +20,13 @@ class HungarianDecorator:
     def decorate_token(self, token):
         decorated_token = []
         for word, tag in token:
-            decorated_word = self.decorate_word(word, tag)
+            decorated_word = self.decorate_word(word)
             decorated_token.append(decorated_word)
         return decorated_token
 
-    def decorate_word(self, word, tag):
-        return "garbage"
+    @staticmethod
+    def decorate_word(word):
+        return f"__{word}__"
         pass
 
     def decorate_punctuation(self, token):

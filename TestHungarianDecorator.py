@@ -34,18 +34,12 @@ class TestHungarianDecorator(unittest.TestCase):
     def test_decorate_sentence(self):
         sentence = "This is a sentence."
         actual = self.decorator.decorate_sentence(sentence)
-#        approvaltests.verify(actual, reporter=DiffReporter())
-# Not yet        r = GenericDiffReporterFactory().get('genericdiff')
 
-        r1 = GenericDiffReporterFactory().get('meld')
-        # print(f"{r1}")
+        visual_reporter = GenericDiffReporterFactory().get('meld')
+        textual_reporter = CommandLineReporter()
+        multi_reporter = MultiReporter(visual_reporter, textual_reporter)
 
-        r2 = CommandLineReporter()
-        # print(f"{r2}")
-
-        r3 = MultiReporter(r1, r2)
-
-        approvaltests.verify(actual, reporter=r3)
+        approvaltests.verify(actual, reporter=multi_reporter)
 
     @unittest.skip("Not yet implemented")
     def test_decorate_token(self, word=""):

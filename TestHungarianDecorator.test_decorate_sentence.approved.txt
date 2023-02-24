@@ -1,1 +1,1 @@
-['garbage', 'garbage', 'garbage', 'garbage', 'garbage']
+['__This__', '__is__', '__a__', '__sentence__', '__.__']
